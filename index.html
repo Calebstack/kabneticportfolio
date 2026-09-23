@@ -3,8 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kabnetic portfolio</title>
-  <meta name="description" content="Kabnetic — Web design, UI/UX and graphic design portfolio. Crafting modern digital experiences that help brands stand out and grow." />
+  <title>Kabnetic | Full-Stack Developer & UI/UX Designer</title>
+  <meta name="description" content="Kabnetic is a full-stack web developer and UI/UX designer creating high-performance websites, web applications, database systems, and digital experiences." />
+  <meta name="keywords" content="Kabnetic, full-stack developer, web developer, UI/UX designer, website design, PHP developer, Laravel developer, Nigeria" />
+  <meta name="author" content="Kabnetic" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#07060f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kabnetic" />
+  <meta property="og:title" content="Kabnetic | Full-Stack Developer & UI/UX Designer" />
+  <meta property="og:description" content="Thoughtful digital products, responsive websites, and full-stack web applications built for real impact." />
+  <meta property="og:image" content="assets/images/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kabnetic | Full-Stack Developer & UI/UX Designer" />
+  <meta name="twitter:description" content="Thoughtful digital products, responsive websites, and full-stack web applications built for real impact." />
+  <meta name="twitter:image" content="assets/images/hero.jpg" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kabnetic",
+      "jobTitle": "Full-Stack Software Developer and UI/UX Designer",
+      "description": "Full-stack web developer and UI/UX designer creating responsive websites, web applications, and scalable digital products.",
+      "knowsAbout": ["Full-stack web development", "UI/UX design", "Website design", "PHP", "Laravel", "JavaScript", "MySQL"],
+      "sameAs": [
+        "https://www.linkedin.com/in/olusegun-caleb-8a7273214/",
+        "https://github.com/Calebstack"
+      ]
+    }
+  </script>
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
 
   <!-- Bootstrap 5 -->
   <link href="assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -45,6 +74,8 @@
   <!-- HERO -->
   <header id="home" class="hero">
     <div class="hero-bg"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-stars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-10 text-center">
@@ -63,11 +94,11 @@
 
           <div class="hero-stats">
             <div class="hero-stat">
-              <div class="num">21+</div>
+              <div class="num">30+</div>
               <div class="lbl">Projects Delivered</div>
             </div>
             <div class="hero-stat">
-              <div class="num">10+</div>
+              <div class="num">15+</div>
               <div class="lbl">Happy Clients</div>
             </div>
             <div class="hero-stat">
@@ -114,9 +145,9 @@
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="service-card">
-            <div class="service-icon"><i class="bi bi-phone"></i></div>
-            <h3>Mobile & App UI</h3>
-            <p>Clean, adaptive mobile interface designs crafted for iOS and Android, focusing on modern aesthetics and usability.</p>
+            <div class="service-icon"><i class="bi bi-window-stack"></i></div>
+            <h3>Website Design</h3>
+            <p>Clear, responsive marketing websites that make your offer easy to understand, trust, and act on.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
@@ -228,7 +259,37 @@
             </div>
           </a>
         </div>
-        <!-- Project 5: CampusFind -->
+        <!-- Project 5: Dirty D's -->
+        <div class="col-md-6 reveal">
+          <a class="work-card" href="https://dirty-ds-mobiledetailing.vercel.app/" target="_blank" rel="noopener">
+            <div class="thumb"><img src="assets/images/project5.png" alt="Dirty D's Mobile RV Detailing website" loading="lazy" /></div>
+            <div class="meta">
+              <div>
+                <span class="tag">Client Website</span>
+                <h3>Dirty D's Mobile RV Detailing</h3>
+                <p class="project-copy"><strong>Problem Solved:</strong> Gives a mobile detailing business a polished, conversion-focused home for bookings, services, and service-area trust.</p>
+                <div class="mt-2"><span class="skill-pill compact-pill">HTML/CSS</span><span class="skill-pill compact-pill">JavaScript</span><span class="skill-pill compact-pill">Responsive UI</span></div>
+              </div>
+              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </div>
+          </a>
+        </div>
+        <!-- Project 6: Brux Barbershop -->
+        <div class="col-md-6 reveal">
+          <a class="work-card" href="https://brux-barber.vercel.app/" target="_blank" rel="noopener">
+            <div class="thumb"><img src="assets/images/project6.jpg" alt="Brux Barbershop website" loading="lazy" /></div>
+            <div class="meta">
+              <div>
+                <span class="tag">Client Website</span>
+                <h3>Brux Barbershop</h3>
+                <p class="project-copy"><strong>Problem Solved:</strong> Creates a warm digital storefront for a modern barbershop, turning atmosphere, services, and booking into one clear journey.</p>
+                <div class="mt-2"><span class="skill-pill compact-pill">Web Design</span><span class="skill-pill compact-pill">Booking UX</span><span class="skill-pill compact-pill">Responsive UI</span></div>
+              </div>
+              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </div>
+          </a>
+        </div>
+        <!-- Project 7: CampusFind -->
         <div class="col-md-6 reveal">
           <a class="work-card" href="https://campusfind.rf.gd/campus/authentication" target="_blank" rel="noopener">
             <div class="thumb"><img src="assets/images/p1.png" alt="CampusFind Web Application" loading="lazy" /></div>
@@ -252,7 +313,7 @@
             </div>
           </a>
         </div>
-        <!-- Project 6: Connect Pro -->
+        <!-- Project 8: Connect Pro -->
         <div class="col-md-6 reveal">
           <a class="work-card" href="https://connectpro.ct.ws/booking_service/index.php" target="_blank" rel="noopener">
             <div class="thumb"><img src="assets/images/p2.png" alt="Connect Pro Platform" loading="lazy" /></div>
@@ -295,6 +356,11 @@
           <p class="section-sub mb-4">
             I'm a Full-Stack Software Developer, UI/UX & Website Designer. I bridge the gap between creative visual design and robust backend engineering, building full-stack web applications, scalable database architectures, and interactive digital interfaces from the ground up.
           </p>
+          <div class="about-highlights">
+            <div><strong>01</strong><span>Thoughtful by default</span></div>
+            <div><strong>02</strong><span>Built to perform</span></div>
+            <div><strong>03</strong><span>Made for people</span></div>
+          </div>
           <a href="#socials" class="btn btn-gradient">Start a Project</a>
         </div>
       </div>
@@ -338,33 +404,35 @@
         <p>Have a project in mind or just want to say hello? I'd love to hear from you.</p>
       </div>
 
-      <div class="row g-4">
-        <div class="col-lg-6 reveal">
+      <div class="row g-5 align-items-stretch contact-layout">
+        <div class="col-lg-4 reveal contact-details">
           <div class="contact-info-item">
             <div class="ico"><i class="bi bi-geo-alt"></i></div>
-            <div>
-              <div class="lbl">Location</div>
-              <div class="val">Remote and onsite collaboration.</div>
-            </div>
+            <div><div class="lbl">Location</div><div class="val">Remote and onsite collaboration.</div></div>
           </div>
-        </div>
-        <div class="col-lg-6 reveal">
           <div class="contact-info-item">
             <div class="ico"><i class="bi bi-clock"></i></div>
-            <div>
-              <div class="lbl">Availability</div>
-              <div class="val">Mon–Fri, 9am–6pm WAT. Fast response within 24 hours.</div>
-            </div>
+            <div><div class="lbl">Availability</div><div class="val">Mon–Fri, 9am–6pm WAT. Fast response within 24 hours.</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ico"><i class="bi bi-chat-dots"></i></div>
+            <div><div class="lbl">Let’s talk</div><div class="val">Tell me what you are building and I’ll follow up with a clear proposal.</div></div>
           </div>
         </div>
-        <div class="col-lg-12 reveal">
-          <div class="contact-info-item" style="background: rgba(99,102,241,.08);">
-            <div class="ico"><i class="bi bi-chat-dots"></i></div>
-            <div>
-              <div class="lbl">Let’s talk</div>
-              <div class="val">Ready to start a project?  Send an email or phone message and I’ll follow up with a custom proposal that fits your goals.</div>
+        <div class="col-lg-8 reveal">
+          <form class="contact-form" action="https://formsubmit.co/kabnetic@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New project enquiry from Kabnetic portfolio" />
+            <input type="hidden" name="_next" value="thank-you.html" />
+            <input type="hidden" name="_captcha" value="false" />
+            <div class="form-heading"><span>Start a conversation</span><i class="bi bi-arrow-up-right"></i></div>
+            <div class="row g-3">
+              <div class="col-md-6"><label for="name">Your name</label><input id="name" class="form-control-custom" type="text" name="name" placeholder="Jane Smith" required /></div>
+              <div class="col-md-6"><label for="email">Email address</label><input id="email" class="form-control-custom" type="email" name="email" placeholder="jane@company.com" required /></div>
+              <div class="col-12"><label for="project">Tell me about the project</label><textarea id="project" class="form-control-custom" name="message" rows="5" placeholder="What are you building, and how can I help?" required></textarea></div>
+              <div class="col-12"><small>Usually replies within 24 hours.</small><button class="btn btn-gradient form-submit" type="submit"><span>Send enquiry</span><i class="bi bi-arrow-up-right"></i></button></div>
             </div>
-          </div>
+            <div class="form-signoff"><span>Let's make something useful.</span><img src="assets/images/logo.png" alt="Kabnetic logo" /></div>
+          </form>
         </div>
       </div>
     </div>
@@ -373,17 +441,29 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div class="socials" id="socials">
-        <a href="tel:+2348105074990" aria-label="Phone" title="+234 810 507 4990"><i class="bi bi-telephone"></i></a>
-        <a href="https://wa.me/qr/MOZ7NEHR2LV2M1" aria-label="Whatsapp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
-        <a href="https://www.linkedin.com/in/olusegun-caleb-8a7273214/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/Calebstack" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="Kabnetic logo" />
+          <p>Thoughtful design, smart solutions, real impact.</p>
+          <div class="socials" id="socials">
+            <a href="tel:+2348105074990" aria-label="Phone" title="+234 810 507 4990"><i class="bi bi-telephone"></i></a>
+            <a href="https://wa.me/qr/MOZ7NEHR2LV2M1" aria-label="Whatsapp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/olusegun-caleb-8a7273214/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/Calebstack" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-label">Explore</div>
+          <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Selected work</a><a href="#about">About me</a>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-label">Let's connect</div>
+          <a href="mailto:kabnetic@gmail.com"><i class="bi bi-envelope"></i> kabnetic@gmail.com</a>
+          <a href="tel:+2348105074990"><i class="bi bi-telephone"></i> +234 810 507 4990</a>
+          <span><i class="bi bi-geo-alt"></i> Remote</span>
+        </div>
       </div>
-      <div class="mb-2 d-flex justify-content-center gap-3 flex-wrap">
-        <a href="mailto:kabnetic@gmail.com" style="color: var(--muted); text-decoration: none;"><i class="bi bi-envelope me-1"></i> kabnetic@gmail.com</a>
-      </div>
-      <div>© <span id="yr"></span> Kabnetic. All rights reserved.</div>
-      <div class="tagline">Thoughtful Design • Smart Solutions • Real Impact</div>
+      <div class="footer-bottom"><span>© <span id="yr"></span> Kabnetic. All rights reserved.</span><span>Built for meaningful work.</span></div>
     </div>
   </footer>
 
@@ -414,6 +494,13 @@
       });
       links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
     });
+
+    // Use an absolute confirmation URL when the portfolio is hosted.
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm && window.location.protocol !== 'file:') {
+      const nextUrl = contactForm.querySelector('input[name="_next"]');
+      nextUrl.value = window.location.origin + '/thank-you.html';
+    }
   </script>
 </body>
 </html>
