@@ -32,418 +32,386 @@
       ]
     }
   </script>
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
-  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+  <link rel="icon" type="image/png" href="assets/images/logo-mark.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo-mark.png" />
 
-  <!-- Bootstrap 5 -->
-  <link href="assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/kabnetic.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/kabnetic.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-    <div class="container">
-      <a class="brand-logo" href="#home">
-        <img src="assets/images/logo.png" alt="Kabnetic logo" />
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#home" aria-label="Kabnetic home">
+        <img class="mark" src="assets/images/logo-mark.png" alt="" />
+        <img class="word" src="assets/images/logo-wordmark.png" alt="Kabnetic" />
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-        <ul class="navbar-nav align-items-lg-center">
-          <li class="nav-item"><a class="nav-link nav-link-custom" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link nav-link-custom" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link nav-link-custom" href="#work">Work</a></li>
-          <li class="nav-item"><a class="nav-link nav-link-custom" href="#about">About</a></li>
-          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-            <a class="btn btn-gradient" href="#socials">Hire Me</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header id="home" class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="hero-stars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-lg-10 text-center">
-          <span class="eyebrow"><span class="dot"></span> Full-Stack Web Development • UI/UX • Brand Design <span class="dot"></span></span>
-          <h1>
-            Design. Develop.<br/>
-            <span class="grad">Elevate.</span>
-          </h1>
-          <p class="lead">
-            “We engineer end-to-end digital solutions — from user-centered UI/UX design to robust full-stack web and desktop applications. Helping brands and businesses build scalable, accessible, and high-performance digital products that drive real impact.”
-          </p>
-          <div class="d-flex flex-wrap gap-3 justify-content-center">
-            <a href="#work" class="btn btn-gradient"><i class="bi bi-arrow-right-short me-1"></i> View My Work</a>
-            <a href="#socials" class="btn btn-outline-custom">Let's Talk</a>
-          </div>
-
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <div class="num">30+</div>
-              <div class="lbl">Projects Delivered</div>
-            </div>
-            <div class="hero-stat">
-              <div class="num">15+</div>
-              <div class="lbl">Happy Clients</div>
-            </div>
-            <div class="hero-stat">
-              <div class="num">15+</div>
-              <div class="lbl">Technologies Mastered</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn only-mobile">Hire Me</a>
+      </nav>
+      <a class="btn btn--primary nav__cta" href="#contact">Hire Me <i class="bi bi-arrow-up-right"></i></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><i class="bi bi-list"></i></button>
     </div>
   </header>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-lg-7 reveal">
-          <div class="section-eyebrow">— Services</div>
-          <h2 class="section-title">What We do <span class="grad">best.</span></h2>
-          <p class="section-sub">I architect end-to-end web applications and software tools, combining backend engineering in PHP & Laravel with frontend expertise in JavaScript, HTML5, CSS3, and Bootstrap. From intuitive Figma UI/UX wireframes to database optimization in MySQL, I build complete digital solutions tailored to your audience.</p>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero__bg"><img src="assets/images/hero.jpg" alt="" /></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__glow g1" aria-hidden="true"></div>
+      <div class="hero__glow g2" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <span class="pill"><span class="pulse"></span> Full-Stack Web Development • UI/UX • Brand Design</span>
+
+        <div class="hero__title-wrap">
+          <h1 class="hero__title">
+            <span class="line"><span>Design.</span></span>
+            <span class="line"><span>Develop.</span></span>
+            <span class="line"><span class="grad">Elevate.</span></span>
+          </h1>
+          <span class="sticker s1"><i class="bi bi-code-slash"></i> Full-Stack</span>
+          <span class="sticker s2"><i class="bi bi-vector-pen"></i> UI / UX</span>
+          <span class="sticker s3"><i class="bi bi-stars"></i> Brand Design</span>
+        </div>
+
+        <p class="hero__lead">
+          “We engineer end-to-end digital solutions — from user-centered UI/UX design to robust full-stack web and desktop applications. Helping brands and businesses build scalable, accessible, and high-performance digital products that drive real impact.”
+        </p>
+
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--primary btn--lg">View My Work <i class="bi bi-arrow-right"></i></a>
+          <a href="#contact" class="btn btn--ghost btn--lg">Let's Talk</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><div class="num" data-count="30" data-suffix="+">30+</div><div class="lbl">Projects Delivered</div></div>
+          <div class="stat"><div class="num" data-count="15" data-suffix="+">15+</div><div class="lbl">Happy Clients</div></div>
+          <div class="stat"><div class="num" data-count="15" data-suffix="+">15+</div><div class="lbl">Technologies Mastered</div></div>
         </div>
       </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="service-card">
-            <div class="service-icon"><i class="bi bi-code-slash"></i></div>
+      <a class="scroll-cue" href="#services" aria-label="Scroll to services"></a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group"><span>Web Design</span><span>UI / UX</span><span>Full-Stack</span><span>Laravel</span><span>Brand Identity</span><span>PHP</span><span>Figma</span><span>MySQL</span></div>
+        <div class="marquee__group"><span>Web Design</span><span>UI / UX</span><span>Full-Stack</span><span>Laravel</span><span>Brand Identity</span><span>PHP</span><span>Figma</span><span>MySQL</span></div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" class="block">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div class="eyebrow">01 — Services</div>
+          <h2 class="sec-title">What I do <span class="grad">best.</span></h2>
+          <p class="sec-sub">I architect end-to-end web applications and software tools, combining backend engineering in PHP & Laravel with frontend expertise in JavaScript, HTML5, CSS3, and Bootstrap. From intuitive Figma UI/UX wireframes to database optimization in MySQL, I build complete digital solutions tailored to your audience.</p>
+        </div>
+
+        <div class="services">
+          <article class="service reveal">
+            <span class="service__no">01</span>
+            <div class="service__icon"><i class="bi bi-code-slash"></i></div>
             <h3>Full-Stack Web Dev</h3>
             <p>Scalable, robust backend systems paired with dynamic frontends using PHP, Laravel, JavaScript, and MySQL.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="service-card">
-            <div class="service-icon"><i class="bi bi-layout-text-window-reverse"></i></div>
+          </article>
+          <article class="service reveal" style="--d:.08s">
+            <span class="service__no">02</span>
+            <div class="service__icon"><i class="bi bi-layout-text-window-reverse"></i></div>
             <h3>UI / UX Design</h3>
             <p>User-centered interfaces and interactive prototypes in Figma that create intuitive, high-converting digital journeys.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="service-card">
-            <div class="service-icon"><i class="bi bi-database-gear"></i></div>
+          </article>
+          <article class="service reveal" style="--d:.16s">
+            <span class="service__no">03</span>
+            <div class="service__icon"><i class="bi bi-database-gear"></i></div>
             <h3>Database Architecture</h3>
             <p>Efficient database design and query optimization with MySQL to ensure reliable data flow and performance.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="service-card">
-            <div class="service-icon"><i class="bi bi-window-stack"></i></div>
+          </article>
+          <article class="service reveal">
+            <span class="service__no">04</span>
+            <div class="service__icon"><i class="bi bi-window-stack"></i></div>
             <h3>Website Design</h3>
             <p>Clear, responsive marketing websites that make your offer easy to understand, trust, and act on.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="service-card">
-            <div class="service-icon"><i class="bi bi-stars"></i></div>
+          </article>
+          <article class="service reveal" style="--d:.08s">
+            <span class="service__no">05</span>
+            <div class="service__icon"><i class="bi bi-stars"></i></div>
             <h3>Brand Identity</h3>
             <p>Distinctive logos, cohesive color systems, and visual guidelines using Figma and Canva to define your brand identity.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="service-card">
-            <div class="service-icon"><i class="bi bi-cpu"></i></div>
+          </article>
+          <article class="service reveal" style="--d:.16s">
+            <span class="service__no">06</span>
+            <div class="service__icon"><i class="bi bi-cpu"></i></div>
             <h3>Custom API & Ajax Integration</h3>
             <p>Asynchronous web interactions and RESTful API integrations delivering seamless, fast real-time user experiences.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="block">
+      <div class="container">
+        <div class="sec-head row reveal">
+          <div>
+            <div class="eyebrow">02 — Selected Work</div>
+            <h2 class="sec-title" style="margin-bottom:1rem">Recent <span class="grad">projects.</span></h2>
+            <p class="sec-sub">A small selection of work I've shipped recently. Click any project to see the full case study.</p>
           </div>
+          <a href="https://github.com/Calebstack" target="_blank" rel="noopener" class="btn btn--ghost">View All Projects <i class="bi bi-arrow-up-right"></i></a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- WORK -->
-  <section id="work">
-    <div class="container">
-      <div class="row mb-5 align-items-end">
-        <div class="col-lg-7 reveal">
-          <div class="section-eyebrow">— Selected Work</div>
-          <h2 class="section-title">Recent <span class="grad">projects.</span></h2>
-          <p class="section-sub">A small selection of work I've shipped recently. Click any project to see the full case study.</p>
-        </div>
-        <div class="col-lg-5 text-lg-end reveal">
-          <a href="#" class="btn btn-outline-custom">View All Projects <i class="bi bi-arrow-right ms-1"></i></a>
-        </div>
-      </div>
+        <div class="projects">
 
-      <div class="row g-4">
-        <!-- Project 1: HR-AI Module -->
-        <div class="col-md-6 reveal">
-          <a class="work-card" href="https://www.figma.com/design/rL2lppZCt70dYcqYdbZSYe/Untitled?node-id=0-1&p=f&t=QQVVDpX2oAuz1XNi-0" target="_blank" rel="noopener">
-            <div class="thumb"><img src="assets/images/work1.png" alt="Hr-AI Module Cv Workflow" loading="lazy" /></div>
-            <div class="meta">
-              <div>
-                <span class="tag">Figma Design</span>
+          <!-- 01 HR-AI -->
+          <article class="project" style="--i:0">
+            <div class="project__inner">
+              <div class="project__info">
+                <div class="project__top"><span class="project__no">01</span><span class="tag">Figma Design</span></div>
                 <h3>Hr-AI Module Cv Workflow</h3>
-                <p style="color: var(--muted); font-size: 0.88rem; margin-top: 0.4rem;"><strong>Problem Solved:</strong> Streamlines automated candidate CV screening and recruitment management workflows for HR teams through an intuitive design structure.</p>
-                <div class="mt-2">
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Figma</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">UI/UX</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Workflow Design</span>
-                </div>
+                <p><strong>Problem Solved:</strong> Streamlines automated candidate CV screening and recruitment management workflows for HR teams through an intuitive design structure.</p>
+                <ul class="pills"><li>Figma</li><li>UI/UX</li><li>Workflow Design</li></ul>
+                <a class="project__link" href="https://www.figma.com/design/rL2lppZCt70dYcqYdbZSYe/Untitled?node-id=0-1&p=f&t=QQVVDpX2oAuz1XNi-0" target="_blank" rel="noopener">View on Figma <i class="bi bi-arrow-up-right"></i></a>
               </div>
-              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+              <a class="project__media" href="https://www.figma.com/design/rL2lppZCt70dYcqYdbZSYe/Untitled?node-id=0-1&p=f&t=QQVVDpX2oAuz1XNi-0" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span>figma.com/design/hr-ai-module</span></div><div class="frame__view"><img src="assets/images/work1.png" alt="Hr-AI Module Cv Workflow" loading="lazy" /></div></div>
+              </a>
             </div>
-          </a>
-        </div>
-        <!-- Project 2: AI Pass Module -->
-        <div class="col-md-6 reveal">
-          <a class="work-card" href="https://www.figma.com/design/yHtmJdo2WHhXiWqPSuNKsX/AI-PASS-landing-page?node-id=224-6793&t=dZzLxnhC4cAWxEbN-0" target="_blank" rel="noopener">
-            <div class="thumb"><img src="assets/images/work2.png" alt="AI Pass Module Landing Page" loading="lazy" /></div>
-            <div class="meta">
-              <div>
-                <span class="tag">Figma Design</span>
+          </article>
+
+          <!-- 02 AI Pass -->
+          <article class="project" style="--i:1">
+            <div class="project__inner">
+              <div class="project__info">
+                <div class="project__top"><span class="project__no">02</span><span class="tag">Figma Design</span></div>
                 <h3>AI Pass Module - Landing Page</h3>
-                <p style="color: var(--muted); font-size: 0.88rem; margin-top: 0.4rem;"><strong>Problem Solved:</strong> High-converting landing page design for an AI pass authentication platform, focusing on clear visual hierarchy and user onboarding.</p>
-                <div class="mt-2">
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Figma</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Landing Page</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">UI/UX</span>
-                </div>
+                <p><strong>Problem Solved:</strong> High-converting landing page design for an AI pass authentication platform, focusing on clear visual hierarchy and user onboarding.</p>
+                <ul class="pills"><li>Figma</li><li>Landing Page</li><li>UI/UX</li></ul>
+                <a class="project__link" href="https://www.figma.com/design/yHtmJdo2WHhXiWqPSuNKsX/AI-PASS-landing-page?node-id=224-6793&t=dZzLxnhC4cAWxEbN-0" target="_blank" rel="noopener">View on Figma <i class="bi bi-arrow-up-right"></i></a>
               </div>
-              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+              <a class="project__media" href="https://www.figma.com/design/yHtmJdo2WHhXiWqPSuNKsX/AI-PASS-landing-page?node-id=224-6793&t=dZzLxnhC4cAWxEbN-0" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span>figma.com/design/ai-pass-landing-page</span></div><div class="frame__view"><img src="assets/images/work2.png" alt="AI Pass Module Landing Page" loading="lazy" /></div></div>
+              </a>
             </div>
-          </a>
-        </div>
-        <!-- Project 3: Lumen Medicals -->
-        <div class="col-md-6 reveal">
-          <a class="work-card" href="https://medicapp.oluseguncaleb6.workers.dev/" target="_blank" rel="noopener">
-            <div class="thumb"><img src="assets/images/work3.png" alt="Demo website for Lumen Medicals" loading="lazy" /></div>
-            <div class="meta">
-              <div>
-                <span class="tag">Medic Website</span>
+          </article>
+
+          <!-- 03 Lumen -->
+          <article class="project" style="--i:2">
+            <div class="project__inner">
+              <div class="project__info">
+                <div class="project__top"><span class="project__no">03</span><span class="tag">Medic Website</span></div>
                 <h3>Demo website for Lumen Medicals</h3>
-                <p style="color: var(--muted); font-size: 0.88rem; margin-top: 0.4rem;"><strong>Problem Solved:</strong> Delivers a responsive digital presence for healthcare services with instant appointment booking access and clean medical service layouts.</p>
-                <div class="mt-2">
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">HTML/CSS</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Bootstrap</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">JavaScript</span>
-                </div>
+                <p><strong>Problem Solved:</strong> Delivers a responsive digital presence for healthcare services with instant appointment booking access and clean medical service layouts.</p>
+                <ul class="pills"><li>HTML/CSS</li><li>Bootstrap</li><li>JavaScript</li></ul>
+                <a class="project__link" href="https://medicapp.oluseguncaleb6.workers.dev/" target="_blank" rel="noopener">Visit live site <i class="bi bi-arrow-up-right"></i></a>
               </div>
-              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+              <a class="project__media" href="https://medicapp.oluseguncaleb6.workers.dev/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span>medicapp.oluseguncaleb6.workers.dev</span></div><div class="frame__view"><img src="assets/images/work3.png" alt="Demo website for Lumen Medicals" loading="lazy" /></div></div>
+              </a>
             </div>
-          </a>
-        </div>
-        <!-- Project 4: Petal Paw -->
-        <div class="col-md-6 reveal">
-          <a class="work-card" href="https://petalpaw.oluseguncaleb6.workers.dev/" target="_blank" rel="noopener">
-            <div class="thumb"><img src="assets/images/work4.png" alt="Petal Paw Website for Pets" loading="lazy" /></div>
-            <div class="meta">
-              <div>
-                <span class="tag">Pet Website</span>
+          </article>
+
+          <!-- 04 Petal Paw -->
+          <article class="project" style="--i:3">
+            <div class="project__inner">
+              <div class="project__info">
+                <div class="project__top"><span class="project__no">04</span><span class="tag">Pet Website</span></div>
                 <h3>Petal paw website for pets</h3>
-                <p style="color: var(--muted); font-size: 0.88rem; margin-top: 0.4rem;"><strong>Problem Solved:</strong> Connects pet owners to pet care services and adoption tools with a friendly, vibrant UI design and accessible navigation.</p>
-                <div class="mt-2">
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">HTML/CSS</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">JavaScript</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">UI Design</span>
-                </div>
+                <p><strong>Problem Solved:</strong> Connects pet owners to pet care services and adoption tools with a friendly, vibrant UI design and accessible navigation.</p>
+                <ul class="pills"><li>HTML/CSS</li><li>JavaScript</li><li>UI Design</li></ul>
+                <a class="project__link" href="https://petalpaw.oluseguncaleb6.workers.dev/" target="_blank" rel="noopener">Visit live site <i class="bi bi-arrow-up-right"></i></a>
               </div>
-              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+              <a class="project__media" href="https://petalpaw.oluseguncaleb6.workers.dev/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span>petalpaw.oluseguncaleb6.workers.dev</span></div><div class="frame__view"><img src="assets/images/work4.png" alt="Petal Paw Website for Pets" loading="lazy" /></div></div>
+              </a>
             </div>
-          </a>
-        </div>
-        <!-- Project 5: Dirty D's -->
-        <div class="col-md-6 reveal">
-          <a class="work-card" href="https://dirty-ds-mobiledetailing.vercel.app/" target="_blank" rel="noopener">
-            <div class="thumb"><img src="assets/images/project5.png" alt="Dirty D's Mobile RV Detailing website" loading="lazy" /></div>
-            <div class="meta">
-              <div>
-                <span class="tag">Client Website</span>
+          </article>
+
+          <!-- 05 Dirty D's -->
+          <article class="project" style="--i:4">
+            <div class="project__inner">
+              <div class="project__info">
+                <div class="project__top"><span class="project__no">05</span><span class="tag">Client Website</span></div>
                 <h3>Dirty D's Mobile RV Detailing</h3>
-                <p class="project-copy"><strong>Problem Solved:</strong> Gives a mobile detailing business a polished, conversion-focused home for bookings, services, and service-area trust.</p>
-                <div class="mt-2"><span class="skill-pill compact-pill">HTML/CSS</span><span class="skill-pill compact-pill">JavaScript</span><span class="skill-pill compact-pill">Responsive UI</span></div>
+                <p><strong>Problem Solved:</strong> Gives a mobile detailing business a polished, conversion-focused home for bookings, services, and service-area trust.</p>
+                <ul class="pills"><li>HTML/CSS</li><li>JavaScript</li><li>Responsive UI</li></ul>
+                <a class="project__link" href="https://dirty-ds-mobiledetailing.vercel.app/" target="_blank" rel="noopener">Visit live site <i class="bi bi-arrow-up-right"></i></a>
               </div>
-              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+              <a class="project__media" href="https://dirty-ds-mobiledetailing.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span>dirty-ds-mobiledetailing.vercel.app</span></div><div class="frame__view"><img src="assets/images/project5.png" alt="Dirty D's Mobile RV Detailing website" loading="lazy" /></div></div>
+              </a>
             </div>
-          </a>
-        </div>
-        <!-- Project 6: Brux Barbershop -->
-        <div class="col-md-6 reveal">
-          <a class="work-card" href="https://brux-barber.vercel.app/" target="_blank" rel="noopener">
-            <div class="thumb"><img src="assets/images/project6.jpg" alt="Brux Barbershop website" loading="lazy" /></div>
-            <div class="meta">
-              <div>
-                <span class="tag">Client Website</span>
+          </article>
+
+          <!-- 06 Brux -->
+          <article class="project" style="--i:5">
+            <div class="project__inner">
+              <div class="project__info">
+                <div class="project__top"><span class="project__no">06</span><span class="tag">Client Website</span></div>
                 <h3>Brux Barbershop</h3>
-                <p class="project-copy"><strong>Problem Solved:</strong> Creates a warm digital storefront for a modern barbershop, turning atmosphere, services, and booking into one clear journey.</p>
-                <div class="mt-2"><span class="skill-pill compact-pill">Web Design</span><span class="skill-pill compact-pill">Booking UX</span><span class="skill-pill compact-pill">Responsive UI</span></div>
+                <p><strong>Problem Solved:</strong> Creates a warm digital storefront for a modern barbershop, turning atmosphere, services, and booking into one clear journey.</p>
+                <ul class="pills"><li>Web Design</li><li>Booking UX</li><li>Responsive UI</li></ul>
+                <a class="project__link" href="https://brux-barber.vercel.app/" target="_blank" rel="noopener">Visit live site <i class="bi bi-arrow-up-right"></i></a>
               </div>
-              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+              <a class="project__media" href="https://brux-barber.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span>brux-barber.vercel.app</span></div><div class="frame__view"><img src="assets/images/project6.jpg" alt="Brux Barbershop website" loading="lazy" /></div></div>
+              </a>
             </div>
-          </a>
-        </div>
-        <!-- Project 7: CampusFind -->
-        <div class="col-md-6 reveal">
-          <a class="work-card" href="https://campusfind.rf.gd/campus/authentication" target="_blank" rel="noopener">
-            <div class="thumb"><img src="assets/images/p1.png" alt="CampusFind Web Application" loading="lazy" /></div>
-            <div class="meta">
-              <div>
-                <span class="tag">Full-Stack Web App</span>
+          </article>
+
+          <!-- 07 CampusFind -->
+          <article class="project" style="--i:6">
+            <div class="project__inner">
+              <div class="project__info">
+                <div class="project__top"><span class="project__no">07</span><span class="tag">Full-Stack Web App</span></div>
                 <h3>CampusFind</h3>
-                <p style="color: var(--muted); font-size: 0.88rem; margin-top: 0.4rem;"><strong>Problem Solved:</strong> Eliminates campus navigation confusion for students by providing interactive mapping, categorized location directories, and instant search.</p>
-                <div class="mt-2">
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">PHP</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">MySQL</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Bootstrap</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">jQuery</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Ajax</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">HTML5</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">CSS3</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">JSON</span>
-                </div>
+                <p><strong>Problem Solved:</strong> Eliminates campus navigation confusion for students by providing interactive mapping, categorized location directories, and instant search.</p>
+                <ul class="pills"><li>PHP</li><li>MySQL</li><li>Bootstrap</li><li>jQuery</li><li>Ajax</li><li>HTML5</li><li>CSS3</li><li>JSON</li></ul>
+                <a class="project__link" href="https://campusfind.rf.gd/campus/authentication" target="_blank" rel="noopener">Visit live site <i class="bi bi-arrow-up-right"></i></a>
               </div>
-              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+              <a class="project__media" href="https://campusfind.rf.gd/campus/authentication" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span>campusfind.rf.gd/campus</span></div><div class="frame__view"><img src="assets/images/p1.png" alt="CampusFind Web Application" loading="lazy" /></div></div>
+              </a>
             </div>
-          </a>
-        </div>
-        <!-- Project 8: Connect Pro -->
-        <div class="col-md-6 reveal">
-          <a class="work-card" href="https://connectpro.ct.ws/booking_service/index.php" target="_blank" rel="noopener">
-            <div class="thumb"><img src="assets/images/p2.png" alt="Connect Pro Platform" loading="lazy" /></div>
-            <div class="meta">
-              <div>
-                <span class="tag">Full-Stack Web App</span>
+          </article>
+
+          <!-- 08 Connect Pro -->
+          <article class="project" style="--i:7">
+            <div class="project__inner">
+              <div class="project__info">
+                <div class="project__top"><span class="project__no">08</span><span class="tag">Full-Stack Web App</span></div>
                 <h3>Connect Pro</h3>
-                <p style="color: var(--muted); font-size: 0.88rem; margin-top: 0.4rem;"><strong>Problem Solved:</strong> Bridges the communication gap between businesses and clients with real-time project collaboration, service booking, and live status updates.</p>
-                <div class="mt-2">
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">PHP</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">MySQL</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Bootstrap</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">JavaScript</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">Ajax</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">HTML5</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">CSS3</span>
-                  <span class="skill-pill" style="font-size:0.75rem; padding:0.2rem 0.6rem;">JSON</span>
-                </div>
+                <p><strong>Problem Solved:</strong> Bridges the communication gap between businesses and clients with real-time project collaboration, service booking, and live status updates.</p>
+                <ul class="pills"><li>PHP</li><li>MySQL</li><li>Bootstrap</li><li>JavaScript</li><li>Ajax</li><li>HTML5</li><li>CSS3</li><li>JSON</li></ul>
+                <a class="project__link" href="https://connectpro.ct.ws/booking_service/index.php" target="_blank" rel="noopener">Visit live site <i class="bi bi-arrow-up-right"></i></a>
               </div>
-              <div class="arrow"><i class="bi bi-arrow-up-right"></i></div>
+              <a class="project__media" href="https://connectpro.ct.ws/booking_service/index.php" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <div class="frame"><div class="frame__bar"><i></i><i></i><i></i><span>connectpro.ct.ws/booking_service</span></div><div class="frame__view"><img src="assets/images/p2.png" alt="Connect Pro Platform" loading="lazy" /></div></div>
+              </a>
             </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+          </article>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-5 reveal">
-          <div class="about-img-wrap">
-            <img src="assets/images/about.jpg" alt="About Kabnetic" loading="lazy" />
-          </div>
-        </div>
-        <div class="col-lg-7 reveal">
-          <div class="section-eyebrow">— About Me</div>
-          <h2 class="section-title">Designing & Engineering with <span class="grad">purpose</span> & precision.</h2>
-          <p class="section-sub mb-4">
-            I'm a Full-Stack Software Developer, UI/UX & Website Designer. I bridge the gap between creative visual design and robust backend engineering, building full-stack web applications, scalable database architectures, and interactive digital interfaces from the ground up.
-          </p>
-          <div class="about-highlights">
-            <div><strong>01</strong><span>Thoughtful by default</span></div>
-            <div><strong>02</strong><span>Built to perform</span></div>
-            <div><strong>03</strong><span>Made for people</span></div>
-          </div>
-          <a href="#socials" class="btn btn-gradient">Start a Project</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TOOLS -->
-  <section id="tools" style="padding-top:0;">
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col-lg-7 reveal">
-          <div class="section-eyebrow">— Tools & Technologies</div>
-          <h2 class="section-title">My everyday <span class="grad">toolkit.</span></h2>
-        </div>
-      </div>
-      <div class="tools-strip reveal">
-        <div class="tool-item"><i class="bi bi-filetype-php"></i> PHP</div>
-        <div class="tool-item"><i class="bi bi-code-square"></i> Laravel</div>
-        <div class="tool-item"><i class="bi bi-database"></i> MySQL</div>
-        <div class="tool-item"><i class="bi bi-database-check"></i> phpMyAdmin</div>
-        <div class="tool-item"><i class="bi bi-filetype-jsx"></i> React.js</div>
-        <div class="tool-item"><i class="bi bi-filetype-js"></i> JavaScript</div>
-        <div class="tool-item"><i class="bi bi-code"></i> jQuery</div>
-        <div class="tool-item"><i class="bi bi-filetype-html"></i> HTML5</div>
-        <div class="tool-item"><i class="bi bi-filetype-css"></i> CSS3</div>
-        <div class="tool-item"><i class="bi bi-bootstrap"></i> Bootstrap</div>
-        <div class="tool-item"><i class="bi bi-git"></i> Git</div>
-        <div class="tool-item"><i class="bi bi-vector-pen"></i> Figma</div>
-        <div class="tool-item"><i class="bi bi-image"></i> Canva</div>
-        <div class="tool-item"><i class="bi bi-palette"></i> Stitch</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT / CTA -->
-  <section id="contact">
-    <div class="container">
-      <div class="cta-card reveal mb-5">
-        <div class="section-eyebrow" style="justify-content:center;">— Let's Connect</div>
-        <h2>Let's build something <span class="grad">great</span> together.</h2>
-        <p>Have a project in mind or just want to say hello? I'd love to hear from you.</p>
-      </div>
-
-      <div class="row g-5 align-items-stretch contact-layout">
-        <div class="col-lg-4 reveal contact-details">
-          <div class="contact-info-item">
-            <div class="ico"><i class="bi bi-geo-alt"></i></div>
-            <div><div class="lbl">Location</div><div class="val">Remote and onsite collaboration.</div></div>
+    <!-- ABOUT -->
+    <section id="about" class="block">
+      <div class="container">
+        <div class="about">
+          <div class="about__media reveal">
+            <div class="about__img"><img src="assets/images/about.jpg" alt="About Kabnetic" loading="lazy" /></div>
+            <div class="badge b1"><i class="bi bi-braces"></i><div>Full-Stack<small>PHP · Laravel · MySQL</small></div></div>
+            <div class="badge b2"><i class="bi bi-vector-pen"></i><div>UI / UX<small>Figma · Canva</small></div></div>
           </div>
-          <div class="contact-info-item">
-            <div class="ico"><i class="bi bi-clock"></i></div>
-            <div><div class="lbl">Availability</div><div class="val">Mon–Fri, 9am–6pm WAT. Fast response within 24 hours.</div></div>
-          </div>
-          <div class="contact-info-item">
-            <div class="ico"><i class="bi bi-chat-dots"></i></div>
-            <div><div class="lbl">Let’s talk</div><div class="val">Tell me what you are building and I’ll follow up with a clear proposal.</div></div>
+          <div class="about__text reveal" style="--d:.1s">
+            <div class="eyebrow">03 — About Me</div>
+            <h2 class="sec-title">Designing & Engineering with <span class="grad">purpose</span> & precision.</h2>
+            <p class="sec-sub">I'm a Full-Stack Software Developer, UI/UX & Website Designer. I bridge the gap between creative visual design and robust backend engineering, building full-stack web applications, scalable database architectures, and interactive digital interfaces from the ground up.</p>
+            <div class="highlights">
+              <div><i class="highlight__icon bi bi-lightbulb" aria-hidden="true"></i><div><strong>01</strong><span>Thoughtful by default</span></div></div>
+              <div><i class="highlight__icon bi bi-lightning-charge" aria-hidden="true"></i><div><strong>02</strong><span>Built to perform</span></div></div>
+              <div><i class="highlight__icon bi bi-heart" aria-hidden="true"></i><div><strong>03</strong><span>Made for people</span></div></div>
+            </div>
+            <a href="#contact" class="btn btn--primary btn--lg">Start a Project <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
-        <div class="col-lg-8 reveal">
-          <form class="contact-form" action="https://formsubmit.co/kabnetic@gmail.com" method="POST">
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section id="tools" class="block" style="padding-top:0">
+      <div class="container">
+        <div class="sec-head reveal" style="margin-bottom:2.4rem">
+          <div class="eyebrow">04 — Tools & Technologies</div>
+          <h2 class="sec-title" style="margin-bottom:0">My everyday <span class="grad">toolkit.</span></h2>
+        </div>
+        <div class="tools">
+          <div class="tool reveal"><i class="bi bi-filetype-php"></i> PHP</div>
+          <div class="tool reveal" style="--d:.04s"><i class="bi bi-code-square"></i> Laravel</div>
+          <div class="tool reveal" style="--d:.08s"><i class="bi bi-database"></i> MySQL</div>
+          <div class="tool reveal" style="--d:.12s"><i class="bi bi-database-check"></i> phpMyAdmin</div>
+          <div class="tool reveal" style="--d:.16s"><i class="bi bi-filetype-jsx"></i> React.js</div>
+          <div class="tool reveal"><i class="bi bi-filetype-js"></i> JavaScript</div>
+          <div class="tool reveal" style="--d:.04s"><i class="bi bi-code"></i> jQuery</div>
+          <div class="tool reveal" style="--d:.08s"><i class="bi bi-filetype-html"></i> HTML5</div>
+          <div class="tool reveal" style="--d:.12s"><i class="bi bi-filetype-css"></i> CSS3</div>
+          <div class="tool reveal" style="--d:.16s"><i class="bi bi-bootstrap"></i> Bootstrap</div>
+          <div class="tool reveal"><i class="bi bi-git"></i> Git</div>
+          <div class="tool reveal" style="--d:.04s"><i class="bi bi-vector-pen"></i> Figma</div>
+          <div class="tool reveal" style="--d:.08s"><i class="bi bi-image"></i> Canva</div>
+          <div class="tool reveal" style="--d:.12s"><i class="bi bi-palette"></i> Stitch</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section id="contact" class="block" style="padding-top:0">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="eyebrow">05 — Let's Connect</div>
+          <h2>Let's build something <span class="grad">great</span> together.</h2>
+          <p>Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+          <a class="btn btn--primary btn--lg" href="mailto:kabnetic@gmail.com"><i class="bi bi-envelope"></i> kabnetic@gmail.com</a>
+        </div>
+
+        <div class="contact">
+          <div class="contact__details reveal">
+            <div class="info">
+              <div class="ico"><i class="bi bi-geo-alt"></i></div>
+              <div><div class="lbl">Location</div><div class="val">Remote and onsite collaboration.</div></div>
+            </div>
+            <div class="info">
+              <div class="ico"><i class="bi bi-clock"></i></div>
+              <div><div class="lbl">Availability</div><div class="val">Mon–Fri, 9am–6pm WAT. Fast response within 24 hours.</div></div>
+            </div>
+            <div class="info">
+              <div class="ico"><i class="bi bi-chat-dots"></i></div>
+              <div><div class="lbl">Let’s talk</div><div class="val">Tell me what you are building and I’ll follow up with a clear proposal.</div></div>
+            </div>
+          </div>
+
+          <form class="form reveal" style="--d:.1s" action="https://formsubmit.co/kabnetic@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New project enquiry from Kabnetic portfolio" />
             <input type="hidden" name="_next" value="thank-you.html" />
             <input type="hidden" name="_captcha" value="false" />
-            <div class="form-heading"><span>Start a conversation</span><i class="bi bi-arrow-up-right"></i></div>
-            <div class="row g-3">
-              <div class="col-md-6"><label for="name">Your name</label><input id="name" class="form-control-custom" type="text" name="name" placeholder="Jane Smith" required /></div>
-              <div class="col-md-6"><label for="email">Email address</label><input id="email" class="form-control-custom" type="email" name="email" placeholder="jane@company.com" required /></div>
-              <div class="col-12"><label for="project">Tell me about the project</label><textarea id="project" class="form-control-custom" name="message" rows="5" placeholder="What are you building, and how can I help?" required></textarea></div>
-              <div class="col-12"><small>Usually replies within 24 hours.</small><button class="btn btn-gradient form-submit" type="submit"><span>Send enquiry</span><i class="bi bi-arrow-up-right"></i></button></div>
+            <div class="form__head"><span>Start a conversation</span><i class="bi bi-arrow-up-right"></i></div>
+            <div class="form__grid">
+              <div class="field"><label for="name">Your name</label><input id="name" class="input" type="text" name="name" placeholder="Jane Smith" required /></div>
+              <div class="field"><label for="email">Email address</label><input id="email" class="input" type="email" name="email" placeholder="jane@company.com" required /></div>
+              <div class="field full"><label for="project">Tell me about the project</label><textarea id="project" class="input" name="message" rows="5" placeholder="What are you building, and how can I help?" required></textarea></div>
+              <div class="field full form__foot"><small>Usually replies within 24 hours.</small><button class="btn btn--primary btn--lg" type="submit"><span>Send enquiry</span><i class="bi bi-arrow-up-right"></i></button></div>
             </div>
-            <div class="form-signoff"><span>Let's make something useful.</span><img src="assets/images/logo.png" alt="Kabnetic logo" /></div>
+            <div class="form__sign"><span>Let's make something useful.</span><img src="assets/images/logo-wordmark.png" alt="Kabnetic logo" /></div>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/images/logo.png" alt="Kabnetic logo" />
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/images/logo-full.png" alt="Kabnetic logo" />
           <p>Thoughtful design, smart solutions, real impact.</p>
           <div class="socials" id="socials">
             <a href="tel:+2348105074990" aria-label="Phone" title="+234 810 507 4990"><i class="bi bi-telephone"></i></a>
@@ -452,55 +420,108 @@
             <a href="https://github.com/Calebstack" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
           </div>
         </div>
-        <div class="footer-links">
-          <div class="footer-label">Explore</div>
-          <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Selected work</a><a href="#about">About me</a>
+        <div>
+          <div class="footer__label">Explore</div>
+          <div class="footer__col">
+            <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Selected work</a><a href="#about">About me</a>
+          </div>
         </div>
-        <div class="footer-contact">
-          <div class="footer-label">Let's connect</div>
-          <a href="mailto:kabnetic@gmail.com"><i class="bi bi-envelope"></i> kabnetic@gmail.com</a>
-          <a href="tel:+2348105074990"><i class="bi bi-telephone"></i> +234 810 507 4990</a>
-          <span><i class="bi bi-geo-alt"></i> Remote</span>
+        <div>
+          <div class="footer__label">Let's connect</div>
+          <div class="footer__col">
+            <a href="mailto:kabnetic@gmail.com"><i class="bi bi-envelope"></i> kabnetic@gmail.com</a>
+            <a href="tel:+2348105074990"><i class="bi bi-telephone"></i> +234 810 507 4990</a>
+            <span><i class="bi bi-geo-alt"></i> Remote</span>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom"><span>© <span id="yr"></span> Kabnetic. All rights reserved.</span><span>Built for meaningful work.</span></div>
+    </div>
+    <div class="footer__giant" aria-hidden="true">kabnetic</div>
+    <div class="footer__bottom">
+      <div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;width:min(100% - 2.5rem, var(--container))">
+        <span>© <span id="yr"></span> Kabnetic. All rights reserved.</span><span>Built for meaningful work.</span>
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Year
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    (function () {
+      const $ = (s, c = document) => c.querySelector(s);
+      const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Navbar shrink on scroll
-    const nav = document.querySelector('.navbar-custom');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 30);
-    });
+      // Year
+      $('#yr').textContent = new Date().getFullYear();
 
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      // Nav state, scroll progress, active link
+      const nav = $('#nav'), bar = $('#progress');
+      const sections = $$('main section[id]');
+      const links = $$('#navLinks a[href^="#"]');
+      function onScroll() {
+        const y = window.scrollY;
+        nav.classList.toggle('scrolled', y > 30);
+        const max = document.documentElement.scrollHeight - innerHeight;
+        bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+        let cur = '';
+        sections.forEach(s => { if (y >= s.offsetTop - 160) cur = s.id; });
+        if (cur === 'tools') cur = 'about';
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+      }
+      addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-    // Active nav link
-    const sections = document.querySelectorAll('section[id], header[id]');
-    const links = document.querySelectorAll('.nav-link-custom');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      // Mobile menu
+      const toggle = $('#navToggle');
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.firstElementChild.className = open ? 'bi bi-x-lg' : 'bi bi-list';
       });
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
-    });
+      links.forEach(l => l.addEventListener('click', () => { nav.classList.remove('open'); toggle.firstElementChild.className = 'bi bi-list'; }));
 
-    // Use an absolute confirmation URL when the portfolio is hosted.
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm && window.location.protocol !== 'file:') {
-      const nextUrl = contactForm.querySelector('input[name="_next"]');
-      nextUrl.value = window.location.origin + '/thank-you.html';
-    }
+      // Reveal on scroll
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+      $$('.reveal').forEach(el => io.observe(el));
+
+      // Count-up stats
+      const counters = $$('[data-count]');
+      const co = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        co.unobserve(e.target);
+        const el = e.target, end = +el.dataset.count, suf = el.dataset.suffix || '';
+        if (reduce) { el.textContent = end + suf; return; }
+        const t0 = performance.now(), dur = 1400;
+        (function tick(t) {
+          const p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(end * eased) + suf;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      }), { threshold: .6 });
+      counters.forEach(c => co.observe(c));
+
+      // Pointer glow + service spotlight (desktop pointers only)
+      if (matchMedia('(pointer:fine)').matches && !reduce) {
+        const glow = $('#cursorGlow');
+        let gx = 0, gy = 0, raf;
+        addEventListener('pointermove', e => {
+          document.body.classList.add('has-pointer');
+          gx = e.clientX; gy = e.clientY;
+          if (!raf) raf = requestAnimationFrame(() => { glow.style.transform = `translate(${gx}px,${gy}px)`; raf = 0; });
+        }, { passive: true });
+        $$('.service').forEach(card => card.addEventListener('pointermove', e => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        }));
+      }
+
+      // Absolute confirmation URL when hosted
+      const form = $('.form');
+      if (form && location.protocol !== 'file:') {
+        form.querySelector('input[name="_next"]').value = location.origin + location.pathname.replace(/[^/]*$/, '') + 'thank-you.html';
+      }
+    })();
   </script>
 </body>
 </html>

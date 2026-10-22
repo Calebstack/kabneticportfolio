@@ -7,45 +7,65 @@
   <meta name="description" content="Your message has been received by Kabnetic." />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#07060f" />
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
-  <link rel="apple-touch-icon" href="assets/images/logo.png" />
-  <link href="assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/images/logo-mark.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo-mark.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/kabnetic.css" />
-  <style>
-    body { min-height: 100vh; display: grid; place-items: center; padding: 2rem; background: var(--bg); }
-    .thank-you-page { position: relative; width: min(100%, 720px); padding: 4rem 2rem; text-align: center; border: 1px solid var(--border); border-radius: 24px; overflow: hidden; background: linear-gradient(145deg, rgba(24,17,52,.96), rgba(11,9,25,.96)); box-shadow: var(--shadow-glow); }
-    .thank-you-page::before { content: ""; position: absolute; width: 20rem; height: 20rem; top: -12rem; right: -5rem; border: 1px solid rgba(139,92,246,.3); border-radius: 50%; box-shadow: 0 0 0 4rem rgba(139,92,246,.06), 0 0 0 8rem rgba(34,211,238,.04); }
-    .thank-you-page > * { position: relative; }
-    .thank-you-logo { width: 150px; height: auto; margin-bottom: 2rem; }
-    .success-icon { width: 72px; height: 72px; display: grid; place-items: center; margin: 0 auto 1.5rem; border-radius: 50%; color: #0a0816; background: var(--gradient); font-size: 2rem; box-shadow: var(--shadow-glow); }
-    h1 { margin-bottom: 1rem; font-size: clamp(2.2rem, 6vw, 4rem); }
-    h1 span { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .thank-you-copy { max-width: 500px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.08rem; }
-    .redirect-note { margin-top: 1.25rem; color: var(--muted); font-size: .85rem; }
-    #countdown { color: var(--accent); font-weight: 600; }
-    @media (max-width: 576px) { .thank-you-page { padding: 3rem 1.25rem; } }
-  </style>
 </head>
 <body>
-  <main class="thank-you-page">
-    <img class="thank-you-logo" src="assets/images/logo.png" alt="Kabnetic logo" />
-    <div class="success-icon"><i class="bi bi-check2"></i></div>
-    <h1>Thank you for <span>reaching out.</span></h1>
-    <p class="thank-you-copy">Your message is on its way. I have received your enquiry and will get back to you as soon as possible.</p>
-    <a class="btn btn-gradient" href="index.html#contact">Back to the portfolio <i class="bi bi-arrow-up-right ms-1"></i></a>
-    <p class="redirect-note">Returning to the homepage in <span id="countdown">3</span> seconds...</p>
+  <main class="ty">
+    <div class="ty__bg" aria-hidden="true"><img src="assets/images/hero.jpg" alt="" /></div>
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+    <section class="ty__card">
+      <img class="ty__logo" src="assets/images/logo-full.png" alt="Kabnetic logo" />
+
+      <svg class="ty__check" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#d946ef" /><stop offset=".5" stop-color="#8b5cf6" /><stop offset="1" stop-color="#22d3ee" />
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="46" />
+        <path d="M30 52 L44 66 L71 36" />
+      </svg>
+
+      <h1>Thank you for <span class="grad">reaching out.</span></h1>
+      <p class="ty__copy">Your message is on its way. I have received your enquiry and will get back to you as soon as possible.</p>
+
+      <a class="btn btn--primary btn--lg" href="index.html#contact">Back to the portfolio <i class="bi bi-arrow-up-right"></i></a>
+
+      <div class="ty__bar" aria-hidden="true"><span></span></div>
+      <p class="ty__note">Returning to the homepage in <b id="countdown">3</b> seconds...</p>
+    </section>
   </main>
 
   <script>
+    // Confetti in the brand colours
+    (function () {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const box = document.getElementById('confetti');
+      const colors = ['#d946ef', '#a855f7', '#8b5cf6', '#6366f1', '#22d3ee', '#ffffff'];
+      for (let i = 0; i < 46; i++) {
+        const p = document.createElement('i');
+        p.style.left = Math.random() * 100 + '%';
+        p.style.background = colors[i % colors.length];
+        p.style.animationDuration = 2.4 + Math.random() * 2.4 + 's';
+        p.style.animationDelay = Math.random() * 1.2 + 's';
+        p.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+        box.appendChild(p);
+      }
+    })();
+
+    // Countdown + redirect
     let seconds = 3;
     const countdown = document.getElementById('countdown');
     const timer = setInterval(() => {
       seconds -= 1;
-      countdown.textContent = seconds;
+      countdown.textContent = Math.max(seconds, 0);
       if (seconds <= 0) {
         clearInterval(timer);
         window.location.href = 'index.html';
